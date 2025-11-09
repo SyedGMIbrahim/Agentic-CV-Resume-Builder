@@ -15,7 +15,7 @@ This project is an AI-powered CV and resume builder that helps you create profes
 ## Tech Stack
 
 - **Frontend**: Streamlit, Streamlit-Ace
-- **Backend**: Python, FastAPI (implied by project structure, though not explicitly stated in current README)
+- **Backend**: Python, FastAPI
 - **AI**: OpenAI (for LLM integration)
 - **Database**: PostgreSQL, SQLAlchemy
 - **Templating**: LaTeX, ReportLab, FPDF2
