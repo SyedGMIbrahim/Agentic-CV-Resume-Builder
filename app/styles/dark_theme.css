@@ -1,0 +1,420 @@
+/* 🌙 Dark Theme with Cool Colors and Gradients */
+
+/* CSS Variables for Cool Color Scheme */
+:root {
+    /* Cool Color Palette */
+    --primary-cyan: #00D9FF;
+    --primary-purple: #6B46C1;
+    --primary-blue: #2563EB;
+    --accent-teal: #14B8A6;
+    --accent-indigo: #4F46E5;
+    --accent-violet: #7C3AED;
+    
+    /* Dark Theme Colors */
+    --bg-primary: #0F172A;
+    --bg-secondary: #1E293B;
+    --bg-tertiary: #334155;
+    --bg-card: rgba(30, 41, 59, 0.8);
+    --bg-hover: #2D3748;
+    
+    /* Text Colors */
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --text-muted: #94A3B8;
+    --text-accent: var(--primary-cyan);
+    
+    /* Border and Shadow */
+    --border-color: rgba(0, 217, 255, 0.2);
+    --shadow-primary: 0 4px 20px rgba(0, 217, 255, 0.15);
+    --shadow-secondary: 0 8px 32px rgba(107, 70, 193, 0.2);
+    --shadow-glow: 0 0 40px rgba(0, 217, 255, 0.3);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
+    --gradient-secondary: linear-gradient(135deg, var(--accent-teal), var(--accent-indigo));
+    --gradient-tertiary: linear-gradient(135deg, var(--primary-blue), var(--accent-violet));
+    --gradient-bg: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+    --gradient-card: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(51, 65, 85, 0.7));
+    
+    /* Animations */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--gradient-bg);
+    background-attachment: fixed;
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Animated Background Gradient */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Main Header with Cool Effects */
+.main-header {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 2rem 0;
+    text-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
+    animation: headerGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes headerGlow {
+    0% { filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.5)); }
+    100% { filter: drop-shadow(0 0 20px rgba(107, 70, 193, 0.8)); }
+}
+
+/* Section Headers */
+.section-header {
+    color: var(--text-accent);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.section-header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 80%;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+/* Card Components with Cool Effects */
+.stCard {
+    background: var(--gradient-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: var(--shadow-primary);
+    transition: all var(--transition-medium);
+    position: relative;
+    overflow: hidden;
+}
+
+.stCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.stCard:hover::before {
+    left: 100%;
+}
+
+.stCard:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow);
+    border-color: rgba(0, 217, 255, 0.4);
+}
+
+/* Buttons with Cool Effects */
+.stButton > button {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-primary);
+}
+
+.stButton > button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.stButton > button:hover::before {
+    left: 100%;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.stButton > button:active {
+    transform: translateY(0);
+}
+
+/* Secondary Buttons */
+.stButton > button[kind="secondary"] {
+    background: transparent;
+    color: var(--primary-cyan);
+    border: 2px solid var(--primary-cyan);
+}
+
+.stButton > button[kind="secondary"]:hover {
+    background: rgba(0, 217, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+}
+
+/* Input Fields with Cool Styling */
+.stTextInput > div > div > input,
+.stTextArea > div > div > textarea,
+.stSelectbox > div > div > select {
+    background: rgba(30, 41, 59, 0.8);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    color: var(--text-primary);
+    padding: 0.75rem;
+    transition: all var(--transition-fast);
+    backdrop-filter: blur(5px);
+}
+
+.stTextInput > div > div > input:focus,
+.stTextArea > div > div > textarea:focus,
+.stSelectbox > div > div > select:focus {
+    border-color: var(--primary-cyan);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+    outline: none;
+}
+
+.stTextInput > div > div > input::placeholder,
+.stTextArea > div > div > textarea::placeholder {
+    color: var(--text-muted);
+}
+
+/* Sidebar Styling */
+.css-1d391kg {
+    background: linear-gradient(180deg, var(--bg-primary), var(--bg-secondary));
+    border-right: 1px solid var(--border-color);
+}
+
+/* Tabs with Cool Effects */
+.stTabs [data-baseweb="tab-list"] {
+    background: rgba(30, 41, 59, 0.5);
+    border-radius: 16px;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+}
+
+.stTabs [data-baseweb="tab"] {
+    color: var(--text-secondary);
+    background: transparent;
+    border-radius: 12px;
+    padding: 0.5rem 1rem;
+    transition: all var(--transition-fast);
+    border: 1px solid transparent;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    color: var(--text-accent);
+    background: rgba(0, 217, 255, 0.1);
+    border-color: rgba(0, 217, 255, 0.3);
+}
+
+.stTabs [aria-selected="true"] {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: var(--shadow-primary);
+}
+
+/* Progress Bars */
+.stProgress > div > div > div {
+    background: var(--gradient-primary);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+}
+
+/* DataFrames */
+.dataframe {
+    background: var(--gradient-card);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.dataframe th {
+    background: var(--gradient-secondary);
+    color: white;
+    font-weight: 600;
+    padding: 1rem;
+    border: none;
+}
+
+.dataframe td {
+    color: var(--text-secondary);
+    padding: 0.75rem 1rem;
+    border-color: var(--border-color);
+}
+
+.dataframe tr:hover {
+    background: rgba(0, 217, 255, 0.05);
+}
+
+/* Radio Buttons and Checkboxes */
+.stRadio > div > div > label,
+.stCheckbox > div > div > label {
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.stRadio > div > div > label:hover,
+.stCheckbox > div > div > label:hover {
+    color: var(--text-accent);
+}
+
+/* Slider */
+.stSlider > div > div > div > div {
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-primary);
+}
+
+/* File Uploader */
+.stFileUploader > div > div {
+    background: rgba(30, 41, 59, 0.5);
+    border: 2px dashed var(--border-color);
+    border-radius: 16px;
+    transition: all var(--transition-medium);
+}
+
+.stFileUploader > div > div:hover {
+    border-color: var(--primary-cyan);
+    background: rgba(0, 217, 255, 0.05);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
+}
+
+/* Status Messages */
+.stSuccess {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.1));
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 12px;
+    color: #22C55E;
+    backdrop-filter: blur(5px);
+}
+
+.stError {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(239, 68, 68, 0.1));
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 12px;
+    color: #EF4444;
+    backdrop-filter: blur(5px);
+}
+
+.stWarning {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.1));
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 12px;
+    color: #F59E0B;
+    backdrop-filter: blur(5px);
+}
+
+.stInfo {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.1));
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 12px;
+    color: #3B82F6;
+    backdrop-filter: blur(5px);
+}
+
+/* Loading Spinner */
+.stSpinner > div > div {
+    border-color: var(--primary-cyan);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-cyan);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-header {
+        font-size: 2rem;
+    }
+    
+    .stButton > button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Glassmorphism Effect */
+.glass {
+    background: rgba(30, 41, 59, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+}
+
+/* Neon Border Effect */
+.neon-border {
+    position: relative;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.neon-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-primary);
+    border-radius: inherit;
+    z-index: -1;
+    animation: neonPulse 2s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
