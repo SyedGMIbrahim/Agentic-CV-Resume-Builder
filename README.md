@@ -12,6 +12,17 @@ This project is an AI-powered CV and resume builder that helps you create profes
 - **Multi-User Support**: Individual profiles and configurations.
 - **Export Options**: PDF and LaTeX source downloads.
 
+## Tech Stack
+
+- **Frontend**: Streamlit, Streamlit-Ace
+- **Backend**: Python, FastAPI (implied by project structure, though not explicitly stated in current README)
+- **AI**: OpenAI (for LLM integration)
+- **Database**: PostgreSQL, SQLAlchemy
+- **Templating**: LaTeX, ReportLab, FPDF2
+- **Containerization**: Docker, Docker Compose
+
+
+
 ## Quick Start
 
 1.  **Clone the repository:**
