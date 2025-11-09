@@ -27,7 +27,7 @@ This project is an AI-powered CV and resume builder that helps you create profes
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/thearpankumar/Agentic-CV-Resume-Builder.git
+    git clone https://github.com/SyedGMIbrahim/Agentic-CV-Resume-Builder.git
     cd Agentic-CV-Resume-Builder
     ```
 2.  **Set up the environment:**
